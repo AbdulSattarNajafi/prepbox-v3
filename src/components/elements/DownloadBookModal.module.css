@@ -1,8 +1,8 @@
 .modal {
     position: fixed;
     inset: 0;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
     z-index: 1000;
     transition: all 0.5s;
 }
@@ -29,24 +29,36 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
-.formControl input {
+.formControl label {
+    display: inline-block;
+    font-size: 16px;
+    padding-left: 3px;
+}
+
+.formControl input,
+.formControl select {
     display: block;
     background-color: #f1f1f1;
     width: 100%;
-    padding: 8px 16px;
+    padding: 8px 12px;
     border: 1px solid transparent;
     border-radius: 5px;
     font-size: 16px;
+    color: #01070d;
     line-height: 20px;
+}
+
+.formControl select:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .errorText {
     font-size: 14px;
     line-height: 20px;
-    height: 20px;
     color: #b12424;
     padding-left: 3px;
 }
@@ -56,6 +68,7 @@
     align-items: center;
     justify-content: flex-end;
     gap: 16px;
+    padding-top: 20px;
 }
 
 .formButton button {
