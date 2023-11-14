@@ -4,13 +4,17 @@ import Loader from '../../components/elements/loader';
 import SecondaryButton from '../../components/button/secondary-button';
 import BookCard from '../../components/cards/BookCard';
 import classes from './Books.module.css';
-import booksConstant from '../../constant/books'
+import booksConstant from '../../constant/books';
+import { useDownloadBook } from '../../contexts/downloadBookContext';
+import DownloadBookModal from '../../components/elements/DownloadBookModal';
 
 const Books = () => {
     const [books, setBooks] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
     const [selectedCurriculum, setSelectedCurriculum] = useState('');
+
+    const { showModal } = useDownloadBook();
 
     const filteredBooks = selectedCurriculum
         ? books.filter((book) => book.country === selectedCurriculum)
@@ -27,7 +31,7 @@ const Books = () => {
                 //     '../../constant/books'
                 // );
                 // setBooks(response.data);
-                setBooks(booksConstant)
+                setBooks(booksConstant);
             } catch (error) {
                 if (error.response) {
                     setError('No Data Found!');
@@ -92,6 +96,7 @@ const Books = () => {
                     </div>
                 )}
             </div>
+            {showModal && <DownloadBookModal />}
         </div>
     );
 };

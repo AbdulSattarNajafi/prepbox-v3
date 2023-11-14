@@ -6,7 +6,9 @@ import Loader from '../../../components/elements/loader';
 import capitalizeString from '../../../utils/capital';
 import BookCardDetail from '../../../components/cards/BookCardDetail';
 import classes from './Bookcover.module.css';
-import books from '../../../constant/books'
+import books from '../../../constant/books';
+import DownloadBookModal from '../../../components/elements/DownloadBookModal';
+import { useDownloadBook } from '../../../contexts/downloadBookContext';
 
 const BookCover = () => {
     const [Chapters, setChapters] = useState([]);
@@ -16,10 +18,12 @@ const BookCover = () => {
     const { bookName } = useParams();
     const navigate = useNavigate();
 
-    var book = books.filter(obj => {
-        return obj.common_name === bookName
-      })[0]
-    
+    const { showModal } = useDownloadBook();
+
+    var book = books.filter((obj) => {
+        return obj.common_name === bookName;
+    })[0];
+
     useEffect(() => {
         const getChapters = async () => {
             try {
@@ -107,7 +111,7 @@ const BookCover = () => {
                     image={Book.cover_image}
                     bookPDFName={book.bookPDF_name}
                     bookPDF={book.bookPDF}
-                    available={book.available} 
+                    available={book.available}
                 />
             </div>
             <div className={classes.container}>
@@ -154,6 +158,7 @@ const BookCover = () => {
                     </>
                 )}
             </div>
+            {showModal && <DownloadBookModal />}
         </div>
     );
 };

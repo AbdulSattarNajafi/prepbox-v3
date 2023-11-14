@@ -4,10 +4,13 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './index.css';
 import App from './App';
+import { DownloadBookProvider } from './contexts/downloadBookContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <App />
+        <DownloadBookProvider>
+            <App />
+        </DownloadBookProvider>
     </React.StrictMode>
 );
