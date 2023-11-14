@@ -1,0 +1,24 @@
+.sliderItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+}
+
+.sliderItem h4 {
+    text-align: center;
+    max-width: 760px;
+    width: calc(100% - 120px);
+    margin-bottom: 50px;
+    font-weight: 400;
+}
+
+@media (max-width: 575.98px) {
+    .sliderItem {
+        font-size: 16px;
+    }
+    .sliderItem h4 {
+        width: 100%;
+        margin-bottom: 24px;
+    }
+}

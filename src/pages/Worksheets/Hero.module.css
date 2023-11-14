@@ -1,0 +1,53 @@
+.hero {
+    padding: 60px 0;
+}
+
+.heroContent {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.texts {
+    width: 50%;
+}
+
+.textsWrapper {
+    max-width: 400px;
+}
+
+.textsWrapper h1 {
+    margin-bottom: 32px;
+}
+
+.faq {
+    width: 50%;
+}
+
+@media (max-width: 1199.98px) {
+    .heroContent {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .heroContent {
+        gap: 32px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .heroContent {
+        flex-direction: column;
+        gap: 80px;
+    }
+    .texts {
+        width: 100%;
+    }
+    .textsWrapper h1 {
+        margin-bottom: 20px;
+    }
+    .faq {
+        width: 100%;
+    }
+}

@@ -1,0 +1,29 @@
+.btn {
+    display: inline-block;
+    text-align: center;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    color: var(--white);
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    padding: 19px 27px;
+    transition: all 0.25s ease;
+}
+
+.btn:hover {
+    color: var(--primary);
+    background-color: transparent;
+}
+
+@media (max-width: 1199.98px) {
+    .btn {
+        padding: 19px 21px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .btn {
+        padding: 15px 25px;
+    }
+}

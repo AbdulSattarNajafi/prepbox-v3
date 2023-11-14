@@ -1,0 +1,22 @@
+.marking {
+    background-image: url('./../../assets/images/marking.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 140px 0;
+}
+
+.markingContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    color: #fff;
+}
+
+@media (max-width: 767.98px) {
+    .marking {
+        padding: 100px 0;
+    }
+}

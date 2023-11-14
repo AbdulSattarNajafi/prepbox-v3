@@ -1,0 +1,43 @@
+.team {
+    padding: 60px 0;
+}
+
+.title {
+    text-align: center;
+    color: #398fe5;
+}
+
+.team__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+@media (max-width: 1199.98px) {
+    .team__grid {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .team__grid {
+        gap: 32px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .team__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        padding-top: 40px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .team__grid {
+        grid-template-columns: 1fr;
+    }
+}

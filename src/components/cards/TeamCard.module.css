@@ -1,0 +1,27 @@
+.card__image {
+    display: flex;
+    justify-content: center;
+}
+
+.card__image img {
+    width: 100%;
+}
+
+.card__body {
+    text-align: center;
+    padding: 20px 5px;
+}
+
+.card__body h4 {
+    color: #398fe5;
+}
+
+.card__body p {
+    margin-top: 20px;
+}
+
+@media (max-width: 575.98px) {
+    .card__body p {
+        margin-top: 16px;
+    }
+}

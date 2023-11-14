@@ -1,0 +1,168 @@
+.result {
+    background-color: #d8ebfd;
+    padding: 60px 0;
+}
+
+.resultContent,
+.resultContentBottom {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.resultContentBottom {
+    justify-content: flex-end;
+    margin-top: 60px;
+}
+
+.image {
+    width: 50%;
+}
+
+.texts,
+.textsBottom {
+    position: absolute;
+    width: calc(50% + 50px);
+    background-color: #fff;
+    padding: 40px 50px;
+    padding-bottom: 30px;
+    z-index: 2;
+}
+
+.texts {
+    right: 0;
+}
+
+.textsBottom {
+    left: 0;
+}
+
+.texts h4,
+.textsBottom h4 {
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.texts p,
+.textsBottom p {
+    margin-bottom: 20px;
+}
+
+.textsButton,
+.textsButtonBottom {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+}
+
+.textsButton {
+    right: 50px;
+}
+
+.textsButtonBottom {
+    left: 50px;
+}
+
+@media (max-width: 1199.98px) {
+    .texts h4,
+    .textsBottom h4 {
+        margin-bottom: 20px;
+    }
+    .texts p,
+    .textsBottom p {
+        margin-bottom: 16px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .resultContentBottom {
+        margin-top: 80px;
+    }
+    .texts,
+    .textsBottom {
+        width: calc(50% + 40px);
+        padding: 24px 20px;
+    }
+    .texts {
+        padding-left: 40px;
+    }
+
+    .textsBottom {
+        padding-right: 40px;
+    }
+    .texts h4,
+    .textsBottom h4 {
+        margin-bottom: 10px;
+    }
+    .texts p,
+    .textsBottom p {
+        line-height: 1.4;
+    }
+    .textsButton {
+        right: 20px;
+    }
+    .textsButtonBottom {
+        left: 20px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .resultContent,
+    .resultContentBottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .resultContentBottom {
+        align-items: flex-end;
+        flex-direction: column-reverse;
+        margin-top: 100px;
+    }
+    .image {
+        position: relative;
+        width: 80%;
+        z-index: 4;
+    }
+    .texts,
+    .textsBottom {
+        position: relative;
+        width: 80%;
+        padding: 50px 40px;
+        padding-top: 80px;
+        transform: translateY(-40px);
+    }
+    .texts {
+        right: unset;
+        margin-left: auto;
+    }
+
+    .textsBottom {
+        left: unset;
+        margin-right: auto;
+    }
+    .textsButton {
+        right: 40px;
+    }
+    .textsButtonBottom {
+        left: 40px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .image {
+        width: 90%;
+    }
+    .texts,
+    .textsBottom {
+        position: relative;
+        width: 90%;
+        padding: 40px 20px;
+        padding-top: 60px;
+        transform: translateY(-30px);
+    }
+    .textsButton {
+        right: 20px;
+    }
+    .textsButtonBottom {
+        left: 20px;
+    }
+}

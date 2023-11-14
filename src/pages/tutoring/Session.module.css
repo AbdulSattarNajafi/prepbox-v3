@@ -1,0 +1,28 @@
+.session {
+    background-color: #d8ebfd;
+    padding: 60px 0;
+}
+
+.sessionHeader {
+    text-align: center;
+}
+
+.sessionHeader p {
+    font-size: 18px;
+    color: #a2a2a2;
+    margin-top: 5px;
+}
+
+.session__grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 32px;
+    padding-top: 27px;
+}
+
+@media (max-width: 1199.98px) {
+    .session__grid {
+        gap: 20px;
+    }
+}
