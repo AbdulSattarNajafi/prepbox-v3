@@ -36,19 +36,19 @@ const Header = () => {
 
                     <div className={`${classes.navMenu} ${openMenu ? classes.navMenuOpen : ''}`}>
                         <ul className={classes.navList}>
-                            <li className={classes.navListItem}>
+                            <li className={classes.navListItem} onClick={menuToggleHandler}>
                                 <NavLink to='/'>Home</NavLink>
                             </li>
-                            <li className={classes.navListItem}>
+                            <li className={classes.navListItem} onClick={menuToggleHandler}>
                                 <NavLink to='tutoring'>Tutoring</NavLink>
                             </li>
-                            <li className={classes.navListItem}>
+                            <li className={classes.navListItem} onClick={menuToggleHandler}>
                                 <NavLink to='worksheets'>Worksheets</NavLink>
                             </li>
-                            <li className={classes.navListItem}>
+                            <li className={classes.navListItem} onClick={menuToggleHandler}>
                                 <NavLink to='about'>About</NavLink>
                             </li>
-                            <li className={classes.navListItem}>
+                            <li className={classes.navListItem} onClick={menuToggleHandler}>
                                 <NavLink to='blog'>Blog</NavLink>
                             </li>
 

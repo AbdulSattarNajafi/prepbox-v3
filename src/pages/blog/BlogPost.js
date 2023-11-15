@@ -6,9 +6,8 @@ import BlogCard from './../../components/cards/BlogCard';
 import classes from './BlogPost.module.css';
 
 import ReactGA from 'react-ga';
-ReactGA.initialize("UA-255807593")
+ReactGA.initialize('UA-255807593');
 ReactGA.pageview(window.location.pathname + window.location.search);
-
 
 const BlogPost = () => {
     const [selectedCategory, setSelectedCategory] = useState('education');
@@ -51,8 +50,8 @@ const BlogPost = () => {
 
                 {filteredPosts.length > 0 ? (
                     <div className={classes['blog__grid']}>
-                        {filteredPosts.map((post) => {
-                            return <BlogCard key={post.id} post={post} />;
+                        {filteredPosts.map((post, index) => {
+                            return <BlogCard key={index} post={post} />;
                         })}
                     </div>
                 ) : (
