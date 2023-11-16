@@ -6,7 +6,7 @@ const DownloadBookContext = createContext({
     showModalHandler: () => {},
     hideModalHandler: () => {},
 
-    book: { file: '', name: '' },
+    book: { file: '', name: '', id: '' },
     setBookHandler: (newBook) => {},
     downloadBookHandler: () => {},
 });

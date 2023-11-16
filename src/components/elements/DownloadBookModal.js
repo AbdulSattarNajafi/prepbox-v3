@@ -45,7 +45,7 @@ const DownloadBookModal = () => {
         }
 
         // ========= API Request
-        console.log(book.name);
+        console.log(book.name, book.id);
         // console.log(`I am a ${selectedType},and my Email is ${enteredEmail}`);
 
         // A- Close Modal

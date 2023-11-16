@@ -104,6 +104,7 @@ const BookCover = () => {
 
             <div className='container'>
                 <BookCardDetail
+                    bookId={book.id}
                     questionCount={Book.questions_count}
                     lectureCount={Book.lectures_count}
                     preReqs={Book.prerequisites}

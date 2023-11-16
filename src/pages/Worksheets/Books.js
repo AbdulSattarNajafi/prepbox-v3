@@ -81,17 +81,7 @@ const Books = () => {
                 {!error && !isLoading && (
                     <div className={classes['section__grid']}>
                         {filteredBooks.map((book) => {
-                            return (
-                                <BookCard
-                                    key={book.id}
-                                    name={book.name}
-                                    commonName={book.common_name}
-                                    image={book.cover_image}
-                                    bookFile={book.bookPDF}
-                                    bookFileName={book.bookPDF_name}
-                                    available={book.available}
-                                />
-                            );
+                            return <BookCard key={book.id} book={book} />;
                         })}
                     </div>
                 )}

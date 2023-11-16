@@ -2,7 +2,23 @@ import { useNavigate } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import classes from './BookCard.module.css';
 import { useDownloadBook } from '../../contexts/downloadBookContext';
-const BookCard = ({ name, commonName, image, bookFile, bookFileName, available, showModal }) => {
+const BookCard = ({ book }) => {
+    const {
+        id: bookId,
+        name,
+        common_name: commonName,
+        cover_image: image,
+        bookPDF: bookFile,
+        bookPDF_name: bookFileName,
+        available,
+    } = book;
+    // name={book.name}
+    //                                 commonName={book.common_name}
+    //                                 image={book.cover_image}
+    //                                 bookFile={book.bookPDF}
+    //                                 bookFileName={book.bookPDF_name}
+    //                                 available={book.available}
+
     const navigate = useNavigate();
     const { showModalHandler, setBookHandler } = useDownloadBook();
 
@@ -11,17 +27,17 @@ const BookCard = ({ name, commonName, image, bookFile, bookFileName, available, 
         // localStorage.setItem('__book_id', id);
     };
 
-    const buttonHandler = (bookFile, bookFileName, event) => {
+    const buttonHandler = (bookFile, bookFileName, bookId, event) => {
         event.stopPropagation();
         showModalHandler();
-        setBookHandler({ file: bookFile, name: bookFileName });
+        setBookHandler({ file: bookFile, name: bookFileName, id: bookId });
     };
 
     const renderButton = (available) => {
         if (available === true) {
             return (
                 <button
-                    onClick={(event) => buttonHandler(bookFile, bookFileName, event)}
+                    onClick={(event) => buttonHandler(bookFile, bookFileName, bookId, event)}
                     className={classes['card__body-button']}
                 >
                     Get the Book
@@ -31,7 +47,7 @@ const BookCard = ({ name, commonName, image, bookFile, bookFileName, available, 
             return (
                 <button
                     disabled
-                    onClick={(event) => buttonHandler(bookFile, bookFileName, event)}
+                    onClick={(event) => buttonHandler(bookFile, bookFileName, bookId, event)}
                     className={classes['card__body-button-unavailable']}
                 >
                     Coming Soon

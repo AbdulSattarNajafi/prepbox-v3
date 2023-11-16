@@ -4,6 +4,7 @@ import classes from './BookCardDetail.module.css';
 import { useDownloadBook } from '../../contexts/downloadBookContext';
 
 const BookCardDetail = ({
+    bookId,
     name,
     preReqs,
     questionCount,
@@ -15,17 +16,17 @@ const BookCardDetail = ({
 }) => {
     const { showModalHandler, setBookHandler } = useDownloadBook();
 
-    const buttonHandler = (bookPDF, bookPDFName, event) => {
+    const buttonHandler = (bookPDF, bookPDFName, bookId, event) => {
         event.stopPropagation();
         showModalHandler();
-        setBookHandler({ file: bookPDF, name: bookPDFName });
+        setBookHandler({ file: bookPDF, name: bookPDFName, id: bookId });
     };
 
     const renderButton = (available) => {
         if (available === true) {
             return (
                 <button
-                    onClick={(event) => buttonHandler(bookPDF, bookPDFName, event)}
+                    onClick={(event) => buttonHandler(bookPDF, bookPDFName, bookId, event)}
                     className={classes['card__body-button']}
                 >
                     Get the Book
@@ -35,7 +36,7 @@ const BookCardDetail = ({
             return (
                 <button
                     disabled
-                    onClick={(event) => buttonHandler(bookPDF, bookPDFName, event)}
+                    onClick={(event) => buttonHandler(bookPDF, bookPDFName, bookId, event)}
                     className={classes['card__body-button-unavailable']}
                 >
                     Coming Soon
