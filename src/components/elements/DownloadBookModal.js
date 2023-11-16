@@ -7,7 +7,7 @@ import { useDownloadBook } from '../../contexts/downloadBookContext';
 import classes from './DownloadBookModal.module.css';
 
 const DownloadBookModal = () => {
-    const { hideModalHandler, downloadBookHandler } = useDownloadBook();
+    const { hideModalHandler, downloadBookHandler, book } = useDownloadBook();
     const ref = useOutsideClick(hideModalHandler);
 
     const {
@@ -45,6 +45,7 @@ const DownloadBookModal = () => {
         }
 
         // ========= API Request
+        console.log(book.name);
         // console.log(`I am a ${selectedType},and my Email is ${enteredEmail}`);
 
         // A- Close Modal

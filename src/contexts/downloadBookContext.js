@@ -30,6 +30,7 @@ const DownloadBookProvider = ({ children }) => {
         showModal,
         showModalHandler,
         hideModalHandler,
+        book,
         setBookHandler,
         downloadBookHandler,
     };
